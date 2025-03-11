@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     body.style.backgroundSize = "cover";
     body.style.backgroundPosition = "center";
     body.style.position = "relative";
-
 });
+
 //for character update
 const characters = [
     './assets/finnSprite/finn.png',
@@ -57,6 +57,7 @@ startButton.addEventListener('mouseleave', ()=>{
 startButton.addEventListener('click', () => {
     startImg.src = 'assets/start-hover.png';
 });
+
 //start click to the main game
 startButton.addEventListener('click', ()=>{
     const username = document.getElementById('username').value;
