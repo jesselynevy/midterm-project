@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let backgroundImg = "";
 
     if(hour>=4 && hour<=9){
-        backgroundImg = './assets/morning-bg.jpg';
+        backgroundImg = './assets/backgroundAsset/morning-bg.jpg';
     }else if(hour>=10 && hour<=14){
-        backgroundImg = './assets/day-bg.jpg';
+        backgroundImg = './assets/backgroundAsset/day-bg.jpg';
     }else if(hour>=15 && hour<=17){
-        backgroundImg = './assets/afternoon-bg.jpg';
+        backgroundImg = './assets/backgroundAsset/afternoon-bg.jpg';
     }else{
-        backgroundImg = './assets/night-bg.jpeg';
+        backgroundImg = './assets/backgroundAsset/night-bg.jpeg';
     }
     body.style.backgroundImage = `url('${backgroundImg}')`;
     body.style.backgroundSize = "cover";
@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 //for character update
 const characters = [
-    './assets/finn.png',
-    './assets/jake.webp',
-    './assets/marcelline.webp',
-    './assets/princess.webp',
-    './assets/iceking.webp',
+    './assets/finnSprite/finn.png',
+    './assets/jakeSprite/jake.png',
+    './assets/marcelineSprite/marceline.png',
+    './assets/princessBubblegumSprite/princess-bubblegum.png',
+    './assets/iceKingSprite/ice-king.png',
 ];
 let currentCharIndex = 0;
 //to update character
@@ -44,7 +44,6 @@ document.getElementById('next-char').addEventListener('click', ()=>{
     currentCharIndex = (currentCharIndex+1)%characters.length;
     updateCharacter();
 });
-updateCharacter();
 
 //start button transition
 const startButton = document.getElementById('start');
