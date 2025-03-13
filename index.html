@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
+
 <body class="overflow-hidden h-screen w-screen font-Pixel flex justify-center items-center">
-    <div class="w-full h-full flex flex-col justify-center items-center bg-white/10 backdrop-blur-sm backdrop-saturate-150">
+    <div
+        class="w-full h-full flex flex-col justify-center items-center bg-white/10 backdrop-blur-sm backdrop-saturate-150">
         <!-- title -->
         <div class="flex justify-center items-center mb-5">
             <img src="assets/title.png" alt="title" class="max-w-sm">
@@ -20,27 +23,31 @@
         <!-- avatar selection -->
         <div class="flex flex-col items-center text-center p-6 w-full max-w-lg">
             <div class="flex justify-center items-center gap-6 mb-4">
-                <button id="prev-char" class="w-12 h-12 flex justify-center items-center hover:scale-105 transition-all">
+                <button id="prev-char"
+                    class="w-12 h-12 flex justify-center items-center hover:scale-105 transition-all">
                     <img src="assets/prev.png" alt="prev-arrow" class="w-full transition-all">
                 </button>
                 <img id="character-img" src="assets/finnSprite/finn.png" alt="avatar" class="w-48 max-w-none">
-                <button id="next-char" class="w-12 h-12 flex justify-center items-center hover:scale-105 transition-all">
+                <button id="next-char"
+                    class="w-12 h-12 flex justify-center items-center hover:scale-105 transition-all">
                     <img src="assets/next.png" alt="next-arrow" class="w-full transition-all">
                 </button>
             </div>
 
             <!-- name input -->
             <div class="flex justify-center items-center w-full">
-                <input type="text" id="username" placeholder="Enter your name..." 
+                <input type="text" id="username" placeholder="Enter your name..."
                     class="px-4 py-2 mb-2 w-90 bg-[url('./assets/name.png')] bg-transparent bg-no-repeat bg-left bg-contain hover:scale-110 transition-all text-black
                     focus:outline-none focus:bg-[url('./assets/name.png')] focus:bg-no-repeat focus:bg-left focus:bg-contain" autocomplete="off">
             </div>
 
-            <button id="start" class="w-full text-white py-2 rounded-md flex justify-center items-center hover:scale-105 transition-all">
+            <button id="start"
+                class="w-full text-white py-2 rounded-md flex justify-center items-center hover:scale-105 transition-all">
                 <img id="start-img" src="assets/start.png" alt="start" class="w-48 transition-all">
-            </button> 
+            </button>
         </div>
     </div>
     <script src="./homepage.js"></script>
 </body>
+
 </html>
