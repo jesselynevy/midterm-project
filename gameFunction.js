@@ -54,25 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
     garden: {
       happiness: 7,
       energy: -5,
-      duration: 3000,
+      duration: 1000,
       message: "Gardening brings life to nature and boosts happiness!",
     },
     sleep: {
       energy: 30,
       hunger: -5,
-      duration: 5000,
+      duration: 2000,
       message: "You take a nap and regain energy, but feel hungrier.",
     },
     cook: {
       hunger: 10,
-      duration: 4000,
+      duration: 1000,
       message: "You cook a meal to satisfy your hunger.",
     },
     read: {
       experience: 5,
       happiness: 8,
       energy: -2,
-      duration: 3000,
+      duration: 1250,
       message: "Reading expands your knowledge but tires your eyes.",
     },
     fight: {
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
       hunger: -10,
       energy: -5,
       coins: 10,
-      duration: 6000,
+      duration: 2000,
       message:
         "Fight Ice Golems for experience and coins, but drain energy and makes you hungry.",
     },
     snow: {
       happiness: 10,
       energy: -5,
-      duration: 4000,
+      duration: 1000,
       message: "Play in the snow to feel joy, though it drains your energy.",
     },
     meditate: {
@@ -95,21 +95,21 @@ document.addEventListener("DOMContentLoaded", function () {
       energy: 3,
       experience: 2,
       hunger: 2,
-      duration: 3000,
+      duration: 1000,
       message: "Meditate to harmonize yourself, slightly increasing all stats.",
     },
     work: {
       coins: 20,
       experience: 5,
       happiness: -10,
-      duration: 6000,
+      duration: 3000,
       message: "Work for stable earnings but at the expense of happiness.",
     },
     research: {
       coins: 15,
       experience: 5,
       energy: -7,
-      duration: 5000,
+      duration: 2000,
       message:
         "Research to earn extra money and experience, though it drains energy.",
     },
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       coins: -8,
       happiness: 10,
       hunger: 15,
-      duration: 4000,
+      duration: 1000,
       message:
         "Visit the Tavern to enjoy yourself, it will cost 10 coins but it makes you happy.",
     },
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       energy: -15,
       hunger: -15,
       experience: 15,
-      duration: 7000,
+      duration: 3000,
       message:
         "Help the Royals, a risky but rewarding task—100 coins and increase experience but it drains the rest of the stats.",
     },
@@ -137,21 +137,21 @@ document.addEventListener("DOMContentLoaded", function () {
       happiness: -5,
       energy: -15,
       hunger: -15,
-      duration: 6000,
+      duration: 3000,
       message:
         "Explore Dungeons for riches and vast experience, but it heavily drains energy and hunger",
     },
     stargaze: {
       energy: 7,
       happiness: 10,
-      duration: 4000,
+      duration: 2000,
       message:
         "In the calm night, stargazing will increase your energy and happiness",
     },
     "have-meal": {
       hunger: 10,
       coins: -10,
-      duration: 3000,
+      duration: 2000,
       message:
         "You will spend 10 coins for having meal at tavern to satisfy your hunger",
     },
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
         statusBars[key] = Math.max(0, statusBars[key] - 2);
       });
       updateStatusBars();
-    }, 8000);
+    }, 7000);
   }
 
   // Money Functions
