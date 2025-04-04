@@ -6,36 +6,34 @@ document.addEventListener("DOMContentLoaded", function() {
     let backgroundImg = "";
 
     if(hour>=4 && hour<=9){
-        backgroundImg = './assets/morning-bg.jpg';
+        backgroundImg = './assets/backgroundAsset/morning-bg.jpg';
     }else if(hour>=10 && hour<=14){
-        backgroundImg = './assets/day-bg.jpg';
-    }else if(hour>=15 && hour<=17){
-        backgroundImg = './assets/afternoon-bg.jpg';
+        backgroundImg = './assets/backgroundAsset/day-bg.jpg';
+    }else if(hour>=15 && hour<=18){
+        backgroundImg = './assets/backgroundAsset/afternoon-bg.jpg';
     }else{
-        backgroundImg = './assets/night-bg.jpeg';
+        backgroundImg = './assets/backgroundAsset/night-bg.jpeg';
     }
     body.style.backgroundImage = `url('${backgroundImg}')`;
     body.style.backgroundSize = "cover";
     body.style.backgroundPosition = "center";
     body.style.position = "relative";
-
 });
 
 //for character update
 const characters = [
-    './assets/finn.png',
-    './assets/jake.png',
-    './assets/princess_bubblegum.png',
-    './assets/marceline.png',
-    './assets/iceking.png',
+    './assets/finnSprite/finn.png',
+    './assets/jakeSprite/jake.png',
+    './assets/marcelineSprite/marceline.png',
+    './assets/princessBubblegumSprite/princess-bubblegum.png',
+    './assets/iceKingSprite/ice-king.png',
 ];
-
 const charAnimate = {
-    0: ["./assets/fin-walk-left.png", "./assets/fin-walk-right.png"],
-    1: ["./assets/jake-walk-left.png", "./assets/jake-walk-right.png"],
-    2: ["./assets/princess_bubblegum_walk.png"],
-    3: ["./assets/marceline_walk_left.png", "./assets/marceline_walk_right.png"],
-    4: ["./assets/iceking_walk.png"],
+    0: ["./assets/finnSprite/finn.png"],
+    1: ["./assets/jakeSprite/jake.png"],
+    2: ["./assets/princessBubblegumSprite/princess-bubblegum-walk.png"],
+    3: ["./assets/marcelineSprite/marceline.png"],
+    4: ["./assets/iceKingSprite/ice-king-walk.png"],
 };
 
 let currentCharIndex = 0;
@@ -53,17 +51,8 @@ function moveChar() {
 
     if (walkInterval) clearInterval(walkInterval); 
 
-    if (images.length === 1) {
-        characterImg.src = images[0];
-        characterImg.classList.add("animate-float");
-    } else {
-        characterImg.classList.remove("animate-float");
-        let frame = 0;
-        walkInterval = setInterval(() => {
-            characterImg.src = images[frame];
-            frame = (frame + 1) % images.length;
-        }, 300);
-    }
+    characterImg.src = images[0];
+    characterImg.classList.add("animate-float");
 }
 
 //previous character
@@ -90,11 +79,14 @@ startButton.addEventListener('mouseleave', ()=>{
 startButton.addEventListener('click', () => {
     startImg.src = 'assets/start-hover.png';
 });
+
 //start click to the main game
 startButton.addEventListener('click', ()=>{
     const username = document.getElementById('username').value;
     if(username){
-        window.location.href = `mainGame.html?character=${currentCharIndex+1}&username=${username}`;
+        localStorage.setItem('username', username);
+        localStorage.setItem('character', currentCharIndex);
+        window.location.href = `mainGame.html`;
     }else{
         alert("Please enter your username!");
     }
