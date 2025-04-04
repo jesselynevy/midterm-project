@@ -418,6 +418,7 @@
 
 .dialogue-box img {
   width: 100%;
+  height: 100px;
 }
 .dialogue-box.active {
   display: block; /* Show when active */
@@ -429,7 +430,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 238, 4);
   width: 80%;
 }
