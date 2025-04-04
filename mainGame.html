@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
-<body class="overflow-hidden h-screen w-screen font-body flex justify-content-center items-center">
+<body class="overflow-hidden h-screen w-screen flex justify-content-center items-center">
     <div class="w-full h-full bg-white/50 backdrop-blur-sm backdrop-saturate-150">
         <div class="w-full max-w-sm px-2 py-2 flex flex-col justify-center items-center mx-auto mb-4">
             <img id="display-char" class="w-20">
@@ -127,7 +127,7 @@
         </div>        
 
     </div>
-    <audio id="game-bgm" src="assets/bgm/game-bgm.mp3"></audio>
+    <audio id="game-bgm" src="assets/bgm/game-bgm.mp3" loop></audio>
     <script>
         window.onload = function () {
         const audio = document.getElementById("game-bgm");
