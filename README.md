@@ -1,6 +1,6 @@
 ADVENTURE TIME: JOURNEY OF HEROES!!
 
-The hosted web (Please open the web from here): https://adventure-time-web-game.vercel.app/
+The hosted web (Please open the web from here for better performance): https://adventure-time-web-game.vercel.app/
 
 Group member:
 Jesselyn Vania Angelie,
