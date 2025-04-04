@@ -1199,6 +1199,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+    // Show hover messages from buttonEffects in dialogueBox
+    infoButtonContainer.addEventListener("mouseover", function (event) {
+      const button = event.target.closest("button");
+
+      if (!button || button.classList.contains("witch")) return;
+
+      // Find which effect applies based on button class
+      for (let className of button.classList) {
+        if (buttonEffects[className]) {
+          const effect = buttonEffects[className];
+          if (effect.message) {
+            dialogueBox.textContent = effect.message;
+            dialogueContainer.style.display = "block";
+          }
+          break;
+        }
+      }
+    });
 
     window.addEventListener("resize", debounce(updateStatusBars, 100));
   }
