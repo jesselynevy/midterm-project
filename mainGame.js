@@ -116,7 +116,7 @@ setInterval(() => {
         walkFrame = (walkFrame + 1) % charAnimate[currentCharIndex].length;
         characterSprite.style.backgroundImage = `url('${charAnimate[currentCharIndex][walkFrame]}')`;
     }
-}, 150);
+}, 135);
 const updateCharacterSprite = () => {
     if (held_directions.length === 0) {
         characterSprite.style.backgroundImage = `url('${characters[currentCharIndex]}')`;
