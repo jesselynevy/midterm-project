@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure Time</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+
+<body class="overflow-hidden h-screen w-screen font-body flex justify-content-center items-center">
+    <div class="w-full h-full bg-white/50 backdrop-blur-sm backdrop-saturate-150">
+        <div class="w-full max-w-sm px-2 py-2 flex flex-col justify-center items-center mx-auto mb-4">
+            <img id="display-char" class="w-20">
+            <h2><span id="greetings" class="font-Pixel text-red-700 text-2xl text-shadow text-center"></span></h2>
+        </div>
+
+        <!-- middle section -->
+
+        <div class="infonmap">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col justify-content-center items-center mb-6">
+                    <div class="health-bars">
+                        <div class="health-bar-wrapper relative">
+                            <img src="assets/status-bar/happiness.png" class="w-full h-6 md:h-8 mx-auto">
+                            <div class="health-bar-fill absolute top-0 left-0 h-full" id="happiness"></div>
+                        </div>
+                        <div class="health-bar-wrapper relative">
+                            <img src="assets/status-bar/hunger.png" class="w-full h-6 md:h-8 mx-auto">
+                            <div class="health-bar-fill absolute top-0 left-0 h-full" id="hunger"></div>
+                        </div>
+                        <div class="health-bar-wrapper relative">
+                            <img src="assets/status-bar/experience.png" class="w-full h-6 md:h-8 mx-auto">
+                            <div class="health-bar-fill absolute top-0 left-0 h-full" id="experience"></div>
+                        </div>
+                        <div class="health-bar-wrapper relative">
+                            <img src="assets/status-bar/energy.png" class="w-full h-6 md:h-8 mx-auto">
+                            <div class="health-bar-fill absolute top-0 left-0 h-full" id="energy"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame ">
+                    <div class="camera">
+                        <div class="map pixel-art">
+                            <div class="character" facing="down" walking="true">
+                                <div class="character_spritesheet pixel-art"></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <img id="info-box" src="assets/info/treehouse-info/green.png" class="absolute z-[-1]">
+                <div class="info-button gap-2">
+                    <button id="info" class="hover:scale-105 transition-all">
+                        <img src="assets/info/treehouse-info/garden.png" alt="info" id="info-button-size"
+                        class="z-10 max-w-[166px] flex-shrink transition-all">
+                    </button>
+                    <button id="info" class="hover:scale-105 transition-all" >
+                        <img src="assets/info/treehouse-info/sleep.png" alt="info" id="info-button-size"
+                        class="z-10 max-w-[166px] flex-shrink transition-all">
+                    </button>
+                    <button id="info" class="hover:scale-105 transition-all">
+                        <img src="assets/info/treehouse-info/cook.png" alt="info" id="info-button-size"
+                        class="z-10 max-w-[166px] flex-shrink transition-all">
+                    </button>
+                    <button id="info" class="hover:scale-105 transition-all" >
+                        <img src="assets/info/treehouse-info/read.png" alt="info" id="info-button-size"
+                        class="z-10 max-w-[166px] flex-shrink transition-all">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- control bar -->
+        <div class="bottom-bar">
+            <div class="info-section">
+                <div class="money-time">
+                    <p id="money">
+                        <span><img src="assets/coin.png"></span>0
+                    </p>
+                    <p id="dayNtime" class="text-shadow"></p>
+                </div>
+                <div class="dialogue-box">
+                    <img src="assets/text-box.png">
+                    <div class="dialogue-text">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-section">
+                <div class="movement-controls dpad">
+                    <button id="up" class="control-button dpad-button dpad-up">
+                        <img src="assets/movement/up.png" alt="up">
+                    </button>
+                    <div class="horizontal-controls">
+                        <button id="left" class="control-button dpad-button dpad-left">
+                            <img src="assets/movement/left.png" alt="left">
+                        </button>
+                        <button id="right" class="control-button dpad-button dpad-right">
+                            <img src="assets/movement/right.png" alt="right">
+                        </button>
+                    </div>
+                    <button id="down" class="control-button dpad-button dpad-down">
+                        <img src="assets/movement/down.png" alt="down">
+                    </button>
+                </div>
+        
+                <div class="map-icon">
+                    <button id="map-icon">
+                        <img src="assets/place/map-icon.png">
+                    </button>
+                </div>
+                <div id="minimap-container" class="hidden">
+                    <div id="minimap">
+                        <p class="text-center text-[#ffd700]">Click outside the map to close</p>
+                        <img src="assets/place/map-icon.png" alt="minimap">
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+    </div>
+    <audio id="game-bgm" src="assets/bgm/game-bgm.mp3"></audio>
+    <script>
+        window.onload = function () {
+        const audio = document.getElementById("game-bgm");
+        audio.volume = 0.05;
+        audio.play().catch((error) => {
+            console.log("Autoplay failed:", error);
+        });
+        };
+    </script>
+    <script src="./mainGame.js"></script>
+    <script src="./gameFunction.js"></script>
 </body>
+
 </html>

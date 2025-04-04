@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         backgroundImg = './assets/backgroundAsset/morning-bg.jpg';
     }else if(hour>=10 && hour<=14){
         backgroundImg = './assets/backgroundAsset/day-bg.jpg';
-    }else if(hour>=15 && hour<=17){
+    }else if(hour>=15 && hour<=18){
         backgroundImg = './assets/backgroundAsset/afternoon-bg.jpg';
     }else{
         backgroundImg = './assets/backgroundAsset/night-bg.jpeg';
@@ -53,14 +53,6 @@ function moveChar() {
 
     characterImg.src = images[0];
     characterImg.classList.add("animate-float");
-    // } else {
-    //     characterImg.classList.remove("animate-float");
-    //     let frame = 0;
-    //     walkInterval = setInterval(() => {
-    //         characterImg.src = images[frame];
-    //         frame = (frame + 1) % images.length;
-    //     }, 300);
-    // }
 }
 
 //previous character
@@ -92,7 +84,9 @@ startButton.addEventListener('click', () => {
 startButton.addEventListener('click', ()=>{
     const username = document.getElementById('username').value;
     if(username){
-        window.location.href = `mainGame.html?character=${currentCharIndex+1}&username=${username}`;
+        localStorage.setItem('username', username);
+        localStorage.setItem('character', currentCharIndex);
+        window.location.href = `mainGame.html`;
     }else{
         alert("Please enter your username!");
     }
