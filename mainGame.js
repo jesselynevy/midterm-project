@@ -104,8 +104,6 @@ const charAnimate = {
 };
 
 const characterSprite = document.querySelector(".character_spritesheet");
-
-// Get the selected character index
 let currentCharIndex = parseInt(localStorage.getItem('character')) || 0;
 let { x, y } = startPositions[currentCharIndex]; // Set character's starting position
 
@@ -113,11 +111,14 @@ characterSprite.style.backgroundImage = `url(${characters[currentCharIndex]})`;
 console.log(characters[currentCharIndex]);
 
 let walkFrame = 0;
-const updateCharacterSprite = () => {
-    if (held_directions.length > 0) {
+setInterval(() => {
+    if(held_directions.length > 0){
         walkFrame = (walkFrame + 1) % charAnimate[currentCharIndex].length;
         characterSprite.style.backgroundImage = `url('${charAnimate[currentCharIndex][walkFrame]}')`;
-    } else {
+    }
+}, 150);
+const updateCharacterSprite = () => {
+    if (held_directions.length === 0) {
         characterSprite.style.backgroundImage = `url('${characters[currentCharIndex]}')`;
     }
 };
@@ -152,14 +153,12 @@ const placeCharacter = () => {
     character.style.transform = `translate3d( ${x * pixelSize}px, ${y * pixelSize}px, 0 )`;
 };
 
-setInterval(updateCharacterSprite, 500);
 const step = () => {
     placeCharacter();
-    window.requestAnimationFrame(() => {
-        step();
-    });
-};
-step();
+    updateCharacterSprite(); // Only resets to idle
+    window.requestAnimationFrame(step);
+ };
+ step();
 
 /* Direction key state */
 let isActivityInProgress = false;

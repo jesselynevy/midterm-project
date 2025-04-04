@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Button Effects Configuration
   const buttonEffects = {
     garden: {
-      happiness: 5,
+      happiness: 7,
       energy: -5,
       duration: 3000,
       message: "Gardening brings life to nature and boosts happiness!",
@@ -1203,7 +1203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     infoButtonContainer.addEventListener("mouseover", function (event) {
       const button = event.target.closest("button");
 
-      if (!button || button.classList.contains("witch")) return;
+      if (!button || button.classList.contains("witch") || !introFinished) return;
 
       // Find which effect applies based on button class
       for (let className of button.classList) {
@@ -1216,6 +1216,15 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         }
       }
+    });
+    infoButtonContainer.addEventListener("mouseout", function (event) {
+      const button = event.target.closest("button");
+    
+      if (!button || button.classList.contains("witch") || !introFinished) return;
+    
+      // Optionally, clear the dialogue only if not in use
+      dialogueBox.textContent = "Hover the button to know what's going on, go ask the witch if you haven't";
+      dialogueContainer.style.display = "block";
     });
 
     window.addEventListener("resize", debounce(updateStatusBars, 100));

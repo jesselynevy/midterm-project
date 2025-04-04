@@ -61,8 +61,13 @@
     height: 100px !important;
   }
   #info-button-size {
-    width: 56px !important;
-    height: 15px !important;
+    width: 60px !important;
+    height: 25px !important;
+  }
+  .horizontal-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px !important;
   }
 }
 @media (max-width: 949px) {
@@ -335,7 +340,7 @@
 .control-section {
   display: flex;
   width: auto;
-  gap: 40px;
+  gap: 30px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -349,8 +354,8 @@
 
 /* Button hover effect */
 .control-button img {
-  min-width: 34px;
-  max-width: 40px;
+  min-width: 55px;
+  max-width: 55px;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -362,7 +367,7 @@
 .horizontal-controls {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 34px;
 }
 
 /* Map icon positioning */
