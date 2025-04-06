@@ -862,12 +862,12 @@ document.addEventListener("DOMContentLoaded", function () {
               "You have failed, child. Now, I have the power to destroy all life 😈";
             overlay.addEventListener("click", function (event) {
               if (event.target === overlay) {
+                lockDemonTower();
+                reduceStats();
                 const overlayElement = document.getElementById("rps-overlay");
                 if (overlayElement) {
                   document.body.removeChild(overlayElement);
                 }
-                lockDemonTower();
-                reduceStats();
               }
             });
           }, 1000);
@@ -973,13 +973,12 @@ document.addEventListener("DOMContentLoaded", function () {
           "You have failed, child. Now, I have the power to destroy all life 😈";
         overlay.addEventListener("click", function (event) {
           if (event.target === overlay) {
+            lockDemonTower();
+            reduceStats();
             const overlayElement = document.getElementById("math-overlay");
             if (overlayElement) {
               document.body.removeChild(overlayElement);
             }
-            document.body.removeChild(overlay);
-            lockDemonTower();
-            reduceStats();
           }
         });
       }
