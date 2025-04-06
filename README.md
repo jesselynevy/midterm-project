@@ -1,6 +1,7 @@
 ADVENTURE TIME: JOURNEY OF HEROES!!
 
-The hosted web (Please open the web from here for better performance): https://adventure-time-web-game.vercel.app/
+The hosted web (Please open the web from here for better performance): 
+https://adventure-time-web-game.vercel.app/
 
 Group member:
 Jesselyn Vania Angelie,
@@ -19,8 +20,8 @@ Movement inside the game:
 You can move by pressing WASD, ARROWS, or clicking Arrow Buttons on the screen.
 
 ⚠️WARNING⚠️
--Make sure to read the dialogue box because every instruction is written there. If you skip it, then it'll be hard to win this game.-
--This game is not easy as it seems (from testimonials, you need to play at least 2 times to win this game)-
+   -Make sure to read the dialogue box because every instruction is written there. If you skip it, then it'll be hard to win this game.-
+   -This game is not easy as it seems (from testimonials, you need to play at least 2 times to win this game)-
 
 
 1. According to the character that you pick, you will spawn in a different starting place. All places have it's own uniqueness. 
@@ -48,25 +49,25 @@ You can move by pressing WASD, ARROWS, or clicking Arrow Buttons on the screen.
    
 5. There are several different activities that can be done in each place on this game and it will affect your stats accordingly.
    5.1 Treehouse:
-         `- Gardening (happiness: +7, energy: -5, duration: 1000)
+         - Gardening (happiness: +7, energy: -5, duration: 1000)
          - Rest (energy: +30, hunger: -5, duration: 2000)
          - Reading book (experience: +5, happiness: +8, energy: -2, duration: 1000)
-         - Cooking (hunger: +10, duration: 1000)`
+         - Cooking (hunger: +10, duration: 1000)
    5.2 Ice Kingdom:
-         `- Fighting Ice Golem (experience: +5, hunger: -10, energy: -5, coins: +10, duration: 2000)
+         - Fighting Ice Golem (experience: +5, hunger: -10, energy: -5, coins: +10, duration: 2000)
          - Playing snow (happiness: +10, energy: -5, duration: 1000)
-         - Meditation (happiness: +2, energy: +3, experience: +2, hunger: +2, duration: 1000)`
+         - Meditation (happiness: +2, energy: +3, experience: +2, hunger: +2, duration: 1000)
    5.3 Bubble Palace:
-         `- Working (coins: +20, experience: +8, happiness: -7, duration: 2000)
+         - Working (coins: +20, experience: +8, happiness: -7, duration: 2000)
          - Research (coins: +15, experience: +8, energy: -7, duration: 2000)
          - Tavern (coins: -8, happiness: +10, hunger: +15, duration: 1000)
-         - Patroling (coins: +100, happiness: -10, energy: -15, hunger: -15, experience: +15, duration: 3000)`
+         - Patroling (coins: +100, happiness: -10, energy: -15, hunger: -15, experience: +15, duration: 3000)
    5.4 Bat Cave:
-         `- Dungeons (coins: +30, experience: +18, happiness: -5, energy: -15, hunger: -10, duration: 3000)
+         - Dungeons (coins: +30, experience: +18, happiness: -5, energy: -15, hunger: -10, duration: 3000)
          - Stargazing (energy: +8, happiness: +10, duration: 2000)
-         - Have a meal (hunger: +10, coins: -10, duration: 2000)`
+         - Have a meal (hunger: +10, coins: -10, duration: 2000)
    5.5 Fire Empire:
-         `- Buying Potion (It will make your stats to the max except Experience, coins: -100)
+         - Buying Potion (It will make your stats to the max except Experience, coins: -100)
          - Magic Orb (Experience must be above 80, coins: -100)
          - Asking Witch (All stats must be above 80 and player must own Magic Orb)
             ~ If condition is not fulfilled then it will show message to ensure the player to meet the requrirement first.
@@ -74,7 +75,7 @@ You can move by pressing WASD, ARROWS, or clicking Arrow Buttons on the screen.
             ~ During riddle challenge, player's stats will not decreasing but if player can't pass this riddle, their stats will start decreasing.
             ~ Else if player can pass the riddle, then the location of the Demon Tower that was initially hidden will be shown at the map.
             ~ You will need to answer only one riddle to know the tower of the demon king. You will be given 3 chances to answer correctly.
-            ~ The Magic Orb is being used whether you win or lose, so either way you have to buy it again.`
+            ~ The Magic Orb is being used whether you win or lose, so either way you have to buy it again.
    5.6 Demon Tower:
       - Fighting Demon King, there will be 2 rounds of battle to defeat Demon King.
         1. Rock, paper, scissors battle, in this round player need to score 3 first before Demon King in order to win the battle, if they win they'll go to next round. But if they lose, their coins will be reduced by 20 and all their stats will be decreased by 25.
