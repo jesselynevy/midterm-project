@@ -680,8 +680,9 @@ document.addEventListener("DOMContentLoaded", function () {
         dialogueBox.textContent = "You must unlock the Demon Tower first! Ask the Witch";
         dialogueContainer.style.display = "block";
         return;
+      } else{
+        showDemonIntro();
       }
-      showDemonIntro();
       return;
     }
     if (buttonClass === "potion" || buttonClass === "magic") {
@@ -690,8 +691,9 @@ document.addEventListener("DOMContentLoaded", function () {
           "You need at least 80 experience and 100 coins to obtain the Magic Orb.";
         dialogueContainer.style.display = "block";
         return;
+      } else{
+        handlePurchase(buttonClass);
       }
-      handlePurchase(buttonClass);
       return;
     }
     if (buttonClass === "witch") {
