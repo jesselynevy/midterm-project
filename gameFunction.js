@@ -779,7 +779,10 @@ document.addEventListener("DOMContentLoaded", function () {
     nextButton.textContent = "Next";
 
     nextButton.addEventListener("click", function () {
-      document.body.removeChild(overlay);
+      const overlayElement = document.getElementById("demon-overlay");
+      if (overlayElement) {
+        document.body.removeChild(overlayElement);
+      }
       startRockPaperScissors();
     });
 
@@ -859,7 +862,10 @@ document.addEventListener("DOMContentLoaded", function () {
               "You have failed, child. Now, I have the power to destroy all life 😈";
             overlay.addEventListener("click", function (event) {
               if (event.target === overlay) {
-                document.body.removeChild(overlay);
+                const overlayElement = document.getElementById("rps-overlay");
+                if (overlayElement) {
+                  document.body.removeChild(overlayElement);
+                }
                 lockDemonTower();
                 reduceStats();
               }
@@ -953,6 +959,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function finishMathBattle() {
       if (correctAnswers >= 3) {
+        const overlayElement = document.getElementById("math-overlay");
+        if (overlayElement) {
+            document.body.removeChild(overlayElement);
+        }
         showFinalVictory(overlay);
         lockDemonTower();
       } else {
@@ -963,6 +973,10 @@ document.addEventListener("DOMContentLoaded", function () {
           "You have failed, child. Now, I have the power to destroy all life 😈";
         overlay.addEventListener("click", function (event) {
           if (event.target === overlay) {
+            const overlayElement = document.getElementById("math-overlay");
+            if (overlayElement) {
+              document.body.removeChild(overlayElement);
+            }
             document.body.removeChild(overlay);
             lockDemonTower();
             reduceStats();
