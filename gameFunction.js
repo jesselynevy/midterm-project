@@ -552,17 +552,17 @@ document.addEventListener("DOMContentLoaded", function () {
         answer: ["finn", "fin"],
       },
       {
-        question: "What's the name of BMO's alter ego? (Hint : ⚽)",
+        question: "What's the name of BMO's alter ego? (Hint : ⚽, Initial: F)",
         answer: ["football"],
       },
       {
         question: "What is the real name of Ice King?",
         answer: ["simon", "simon petrikov"],
       },
-      { question: "Who is Jake's girlfriend?", answer: ["lady rainicorn"] },
+      { question: "What's the color of Jake?", answer: ["yellow"] },
       {
         question:
-          "Who is the main villain in Adventure Time that is a skeleton-like creature? (Hint: Demon King in this game)",
+          "Who is the main villain in Adventure Time that is a skeleton-like creature? (Hint: Demon King in this game, Initial: L)",
         answer: ["the lich", "lich"],
       },
       {
