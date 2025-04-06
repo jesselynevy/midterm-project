@@ -690,6 +690,8 @@ document.addEventListener("DOMContentLoaded", function () {
         dialogueContainer.style.display = "block";
         return;
       } else{
+        activeActivity = true;
+        isActivityInProgress = true;
         showDemonIntro();
       }
       return;
@@ -769,6 +771,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showDemonIntro() {
+    if (document.getElementById("demon-overlay")) return; 
     dialogueBox.textContent =
         "The Demon Tower is now revealed. Prepare for battle!";
     dialogueContainer.style.display = "block";
@@ -794,6 +797,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (overlayElement) {
         document.body.removeChild(overlayElement);
       }
+      activeActivity = false;
+      isActivityInProgress = false;
       startRockPaperScissors();
     });
 
@@ -805,6 +810,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startRockPaperScissors() {
+    if (document.getElementById("rps-overlay")) return;
     let userScore = 0;
     let demonScore = 0;
     let roundsPlayed = 0;
