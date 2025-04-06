@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       experience: 5,
       happiness: 8,
       energy: -2,
-      duration: 1250,
+      duration: 1000,
       message: "Reading expands your knowledge but tires your eyes.",
     },
     fight: {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     work: {
       coins: 20,
       experience: 5,
-      happiness: -10,
+      happiness: -7,
       duration: 3000,
       message: "Work for stable earnings but at the expense of happiness.",
     },
