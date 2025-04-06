@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let isGameOver = false;
   let statusInterval;
   let activeActivity = false;
+  let isPurchasing = false;
   let isDialogueActive = false;
   let introFinished = false;
   let dialogueIndex = 0;
@@ -458,20 +459,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handlePurchase(item) {
+    if (isPurchasing) return; 
+    isPurchasing = true;
     if (item === "magic" && hasMagicOrb) {
       dialogueBox.textContent =
         "You have obtained the magic orb, use it first by asking the witch.";
       dialogueContainer.style.display = "block";
+      isPurchasing = false;
       return;
     }
     const effect = buttonEffects[item];
-
-    if (!effect) return;
+    if (!effect) {
+      isPurchasing = false;
+      return;
+    }
 
     // Check if the player has enough coins
     if (coins < Math.abs(effect.coins)) {
       dialogueBox.textContent = `Not enough coins! You need 100 coins.`;
       dialogueContainer.style.display = "block";
+      isPurchasing = false;
       return;
     }
 
@@ -498,11 +505,13 @@ document.addEventListener("DOMContentLoaded", function () {
         updateMoneyDisplay();
         applyPurchaseEffect(item);
         confirmationBox.remove();
+        isPurchasing = false;
       });
 
     confirmationBox
       .querySelector(".confirm-no")
       .addEventListener("click", function () {
+        isPurchasing = false;
         confirmationBox.remove();
       });
   }
