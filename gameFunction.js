@@ -976,10 +976,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function finishMathBattle() {
       if (correctAnswers >= 3) {
-        const overlayElement = document.getElementById("math-overlay");
-        if (overlayElement) {
-            document.body.removeChild(overlayElement);
-        }
         showFinalVictory(overlay);
         lockDemonTower();
       } else {
