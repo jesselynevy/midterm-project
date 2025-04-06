@@ -100,14 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     work: {
       coins: 20,
-      experience: 5,
+      experience: 8,
       happiness: -7,
-      duration: 3000,
+      duration: 2000,
       message: "Work for stable earnings but at the expense of happiness.",
     },
     research: {
       coins: 15,
-      experience: 5,
+      experience: 8,
       energy: -7,
       duration: 2000,
       message:
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     patrol: {
       coins: 100,
-      happiness: -15,
+      happiness: -10,
       energy: -15,
       hunger: -15,
       experience: 15,
@@ -132,17 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "Help the Royals, a risky but rewarding task—100 coins and increase experience but it drains the rest of the stats.",
     },
     dungeon: {
-      coins: 25,
+      coins: 30,
       experience: 18,
       happiness: -5,
       energy: -15,
-      hunger: -15,
+      hunger: -10,
       duration: 3000,
       message:
         "Explore Dungeons for riches and vast experience, but it heavily drains energy and hunger",
     },
     stargaze: {
-      energy: 7,
+      energy: 8,
       happiness: 10,
       duration: 2000,
       message:
